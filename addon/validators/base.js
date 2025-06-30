@@ -105,7 +105,7 @@ export default class ValidatorsBase {
     this.options = this.buildOptions(
       props.options,
       props.defaultOptions,
-      props.globalOptions
+      props.globalOptions,
     );
     this.errorMessages = (errorMessages ?? Messages).create();
   }
@@ -133,7 +133,7 @@ export default class ValidatorsBase {
       this.attribute,
       options,
       defaultOptions,
-      globalOptions
+      globalOptions,
     );
   }
 
@@ -283,7 +283,7 @@ export default class ValidatorsBase {
 
     if (unsupportedTypes.includes(type)) {
       throw new Error(
-        `[@eflexsystems/ember-tracked-validations] The \`test\` API does not support validators of type: ${type}.`
+        `[@eflexsystems/ember-tracked-validations] The \`test\` API does not support validators of type: ${type}.`,
       );
     }
 

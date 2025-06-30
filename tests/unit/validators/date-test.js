@@ -100,7 +100,7 @@ module('Unit | Validator | date', function (hooks) {
     message = validator.validate('1/1/2016', builtOptions.toObject());
     assert.deepEqual(
       message,
-      'This field must be on or before January 1, 2015'
+      'This field must be on or before January 1, 2015',
     );
 
     message = validator.validate('1/1/2014', builtOptions.toObject());
@@ -136,11 +136,11 @@ module('Unit | Validator | date', function (hooks) {
 
       message = validator.validate(
         moment(now).add(1, precision).toDate(),
-        builtOptions.toObject()
+        builtOptions.toObject(),
       );
       assert.deepEqual(
         message,
-        `This field must be on or before ${nowMessage}`
+        `This field must be on or before ${nowMessage}`,
       );
 
       if (i + 1 !== precisions.length) {
@@ -151,7 +151,7 @@ module('Unit | Validator | date', function (hooks) {
 
         message = validator.validate(
           moment(now).add(1, precisions).toDate(),
-          builtOptions.toObject()
+          builtOptions.toObject(),
         );
         // eslint-disable-next-line qunit/no-conditional-assertions
         assert.true(message);
@@ -220,7 +220,7 @@ module('Unit | Validator | date', function (hooks) {
 
       message = validator.validate(
         moment(now).subtract(1, precision).toDate(),
-        builtOptions.toObject()
+        builtOptions.toObject(),
       );
       assert.deepEqual(message, `This field must be on or after ${nowMessage}`);
 
@@ -232,7 +232,7 @@ module('Unit | Validator | date', function (hooks) {
 
         message = validator.validate(
           moment(now).subtract(1, precisions).toDate(),
-          builtOptions.toObject()
+          builtOptions.toObject(),
         );
         // eslint-disable-next-line qunit/no-conditional-assertions
         assert.true(message);

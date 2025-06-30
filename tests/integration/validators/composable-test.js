@@ -45,7 +45,7 @@ module('Integration | Validators | Composable', function (hooks) {
         validate(value) {
           return this.test('presence', value, { presence: true });
         }
-      }
+      },
     );
 
     const obj = new ObjClass(this.owner, {
@@ -86,7 +86,7 @@ module('Integration | Validators | Composable', function (hooks) {
 
           return true;
         }
-      }
+      },
     );
 
     const obj = new ObjClass(this.owner, {
@@ -101,7 +101,7 @@ module('Integration | Validators | Composable', function (hooks) {
     assert.false(obj.validations.isValid);
     assert.deepEqual(
       obj.validations.message,
-      'This field is too long (maximum is 5 characters)'
+      'This field is too long (maximum is 5 characters)',
     );
 
     obj.value = 'foo';
@@ -115,7 +115,7 @@ module('Integration | Validators | Composable', function (hooks) {
     assert.expect(unsupportedTypes.length);
 
     unsupportedTypes.forEach((type) =>
-      this.owner.register(`validator:${type}`, BaseValidator)
+      this.owner.register(`validator:${type}`, BaseValidator),
     );
 
     this.owner.register(
@@ -127,7 +127,7 @@ module('Integration | Validators | Composable', function (hooks) {
         validate(type) {
           this.test(type);
         }
-      }
+      },
     );
 
     const obj = new ObjClass(this.owner, {
@@ -164,7 +164,7 @@ module('Integration | Validators | Composable', function (hooks) {
 
           assert.deepEqual(presenceValidator, cache.presence);
         }
-      }
+      },
     );
 
     const obj = new ObjClass(this.owner, {

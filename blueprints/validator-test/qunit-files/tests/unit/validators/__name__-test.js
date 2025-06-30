@@ -7,7 +7,7 @@ module('Unit | Validator | <%= dasherizedModuleName %>', function (hooks) {
   // Replace this with your real tests.
   test('it exists', function (assert) {
     const validator = this.owner.lookup(
-      'validator:<%= dasherizedModuleName %>'
+      'validator:<%= dasherizedModuleName %>',
     );
     assert.ok(validator);
   });

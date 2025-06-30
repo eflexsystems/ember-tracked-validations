@@ -34,7 +34,7 @@ export default class ValidatorsDependent extends Base {
 
     assert(
       `[validator:dependent] [${attribute}] option 'on' is required`,
-      isPresent(on)
+      isPresent(on),
     );
 
     if (isNone(model)) {
@@ -46,7 +46,7 @@ export default class ValidatorsDependent extends Base {
     }
 
     let dependentValidations = (options.on ?? []).map(
-      (dependent) => model.validations.attrs[dependent]
+      (dependent) => model.validations.attrs[dependent],
     );
 
     if (!isEmpty(dependentValidations.filter((v) => v.isInvalid))) {

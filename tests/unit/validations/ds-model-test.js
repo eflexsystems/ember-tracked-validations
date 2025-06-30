@@ -9,14 +9,14 @@ module('Unit | Validations | DS.Model', function (hooks) {
 
     assert.false(
       object.validations.attrs.acceptTerms.isValid,
-      'isValid was expected to be FALSE'
+      'isValid was expected to be FALSE',
     );
 
     object.acceptTerms = true;
 
     assert.true(
       object.validations.attrs.acceptTerms.isValid,
-      'isValid was expected to be TRUE'
+      'isValid was expected to be TRUE',
     );
   });
 
@@ -27,14 +27,14 @@ module('Unit | Validations | DS.Model', function (hooks) {
 
     assert.true(
       object.validations.attrs.acceptTerms.isValid,
-      'isValid was expected to be TRUE'
+      'isValid was expected to be TRUE',
     );
 
     object.acceptTerms = false;
 
     assert.false(
       object.validations.attrs.acceptTerms.isValid,
-      'isValid was expected to be FALSE'
+      'isValid was expected to be FALSE',
     );
   });
 });

@@ -16,7 +16,7 @@ import Model, { attr } from '@ember-data/model';
       validator('date', {
         get before() {
           return new Intl.DateTimeFormat('en', { dateStyle: 'long' }).format(
-            new Date()
+            new Date(),
           );
         },
         get after() {
@@ -30,7 +30,7 @@ import Model, { attr } from '@ember-data/model';
           if (type === 'after') {
             return `There is no way you are ${moment().diff(
               value,
-              'years'
+              'years',
             )} years old`;
           }
         },
