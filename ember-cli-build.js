@@ -13,10 +13,10 @@ module.exports = function (defaults) {
       importBootstrapCSS: false,
     },
 
-    'emberData': {
+    emberData: {
       deprecations: {
-        DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false
-      }
+        DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false,
+      },
     },
   });
 
