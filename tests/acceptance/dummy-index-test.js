@@ -62,20 +62,20 @@ module('Acceptance | Dummy | index', function (hooks) {
   });
 
   test('Invalid to valid email', async function (assert) {
-    assert.expect(1);
+    assert.expect(4);
     await visit('/');
 
     const input = find('.validated-input[data-test-email] input');
 
     assert.ok(input);
-//    await fillIn(input, 'invalid-email');
-//
-//    assert.dom('[data-test-email]').hasClass('has-error');
-//    assert
-//      .dom('[data-test-email] .input-error')
-//      .hasText('This field must be a valid email address');
-//
-//    await fillIn(input, validInputValues.email);
-//    assert.dom('[data-test-email]').hasClass('has-success');
+    await fillIn(input, 'invalid-email');
+
+    assert.dom('[data-test-email]').hasClass('has-error');
+    assert
+      .dom('[data-test-email] .input-error')
+      .hasText('This field must be a valid email address');
+
+    await fillIn(input, validInputValues.email);
+    assert.dom('[data-test-email]').hasClass('has-success');
   });
 });
