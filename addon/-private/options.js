@@ -9,7 +9,7 @@ export default class Options {
     attribute,
     options = {},
     defaultOptions = {},
-    globalOptions = {}
+    globalOptions = {},
   ) {
     Object.assign(this, {
       model,

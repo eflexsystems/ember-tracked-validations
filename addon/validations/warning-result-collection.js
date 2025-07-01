@@ -29,7 +29,7 @@ export default class WarningResultCollection extends ResultCollection {
       [
         this.content.map((item) => item.errors),
         this.content.map((item) => item.warnings),
-      ].flat(Infinity)
+      ].flat(Infinity),
     );
   }
 }

@@ -15,7 +15,7 @@ module('Unit | Validator | messages', function (hooks) {
     assert.deepEqual(messages.invalid, '{description} is invalid');
     assert.deepEqual(
       messages.tooShort,
-      '{description} is too short (minimum is {min} characters)'
+      '{description} is too short (minimum is {min} characters)',
     );
   });
 
@@ -26,11 +26,11 @@ module('Unit | Validator | messages', function (hooks) {
     };
     assert.deepEqual(
       messages.formatMessage(undefined, context),
-      'This field is invalid'
+      'This field is invalid',
     );
     assert.deepEqual(
       messages.formatMessage('{foo} is undefined'),
-      'undefined is undefined'
+      'undefined is undefined',
     );
     assert.deepEqual(
       messages.formatMessage('{foo} {foo} {bar} {baz}', {
@@ -38,7 +38,7 @@ module('Unit | Validator | messages', function (hooks) {
         bar: 1,
         baz: 'abc',
       }),
-      'a a 1 abc'
+      'a a 1 abc',
     );
   });
 
@@ -50,11 +50,11 @@ module('Unit | Validator | messages', function (hooks) {
     };
     assert.deepEqual(
       messages.getMessageFor('foo', context),
-      'This field is invalid'
+      'This field is invalid',
     );
     assert.deepEqual(
       messages.getMessageFor('tooShort', context),
-      'This field is too short (minimum is 4 characters)'
+      'This field is too short (minimum is 4 characters)',
     );
   });
 });

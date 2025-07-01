@@ -76,15 +76,15 @@ module('Unit | Validator | format', function (hooks) {
     validAddresses.forEach((email) =>
       assert.true(
         validator.validate(email, options),
-        `validation of ${email} must succeed`
-      )
+        `validation of ${email} must succeed`,
+      ),
     );
     invalidAddresses.forEach((email) =>
       assert.deepEqual(
         validator.validate(email, options),
         'This field must be a valid email address',
-        `validation of ${email} must fail`
-      )
+        `validation of ${email} must fail`,
+      ),
     );
   });
 
@@ -139,15 +139,15 @@ module('Unit | Validator | format', function (hooks) {
     validAddresses.forEach((email) =>
       assert.true(
         validator.validate(email, options),
-        `validation of ${email} must succeed`
-      )
+        `validation of ${email} must succeed`,
+      ),
     );
     invalidAddresses.forEach((email) =>
       assert.deepEqual(
         validator.validate(email, options),
         'This field must be a valid email address',
-        `validation of ${email} must fail`
-      )
+        `validation of ${email} must fail`,
+      ),
     );
   });
 

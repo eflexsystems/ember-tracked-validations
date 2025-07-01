@@ -29,7 +29,7 @@ module('Unit | Validator | base', function (hooks) {
       {
         foo: 'a',
         bar: 'b',
-      }
+      },
     );
   });
 
@@ -51,7 +51,7 @@ module('Unit | Validator | base', function (hooks) {
       {
         foo: 'a',
         bar: 'b',
-      }
+      },
     );
   });
 

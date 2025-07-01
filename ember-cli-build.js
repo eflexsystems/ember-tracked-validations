@@ -8,9 +8,15 @@ module.exports = function (defaults) {
     snippetPaths: ['snippets', 'tests/dummy/snippets'],
 
     'ember-bootstrap': {
-      bootstrapVersion: 4,
+      bootstrapVersion: 5,
       importBootstrapFont: false,
       importBootstrapCSS: false,
+    },
+
+    emberData: {
+      deprecations: {
+        DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false,
+      },
     },
   });
 

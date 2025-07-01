@@ -171,7 +171,7 @@ export default class ValidationsResultCollection {
    */
   get warnings() {
     return this._computeErrorCollection(
-      this.content.map((item) => item.warnings)
+      this.content.map((item) => item.warnings),
     );
   }
 
@@ -208,7 +208,7 @@ export default class ValidationsResultCollection {
    */
   get errors() {
     return this._computeErrorCollection(
-      this.content.map((item) => item.errors)
+      this.content.map((item) => item.errors),
     );
   }
 

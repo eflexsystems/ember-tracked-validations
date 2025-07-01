@@ -92,7 +92,7 @@ export default function buildValidations(validations = {}, globalOptions = {}) {
             this,
             createCache(() => {
               return new this.__VALIDATIONS_CLASS__(this);
-            })
+            }),
           );
         }
 
@@ -105,7 +105,7 @@ export default function buildValidations(validations = {}, globalOptions = {}) {
         if (!ValidationsClass) {
           ValidationsClass = createValidationsClass(
             Object.getPrototypeOf(this)?.__VALIDATIONS_CLASS__,
-            validations
+            validations,
           );
         }
         return ValidationsClass;
@@ -179,12 +179,14 @@ function createValidationsClass(inheritedValidationsClass, validations) {
 
     validationRules = Object.assign(
       validationRules,
-      inheritedValidations._validationRules
+      inheritedValidations._validationRules,
     );
 
     validatableAttributes = [
       ...new Set(
-        inheritedValidations.validatableAttributes.concat(validatableAttributes)
+        inheritedValidations.validatableAttributes.concat(
+          validatableAttributes,
+        ),
       ),
     ];
   }
@@ -365,15 +367,15 @@ function createAttrsClass(validatableAttributes) {
                     validator.getValue(),
                     options,
                     model,
-                    attribute
-                  )
+                    attribute,
+                  ),
               );
 
               return ResultCollection.create({
                 attribute,
                 content: validationResults,
               });
-            })
+            }),
           );
         }
 
@@ -483,7 +485,7 @@ function createValidatorsFor(attribute, model) {
   // We must have an owner to be able to lookup our validators
   if (isNone(owner)) {
     throw new TypeError(
-      `[@eflexsystems/ember-tracked-validations] ${model.toString()} is missing a container or owner.`
+      `[@eflexsystems/ember-tracked-validations] ${model.toString()} is missing a container or owner.`,
     );
   }
 
@@ -562,7 +564,8 @@ function validateAttribute(attribute, value) {
     attribute,
     model,
     validators,
-    (validator, options) => validator.validate(value, options, model, attribute)
+    (validator, options) =>
+      validator.validate(value, options, model, attribute),
   );
 
   let validations = ResultCollection.create({

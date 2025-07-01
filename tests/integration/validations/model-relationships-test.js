@@ -78,11 +78,11 @@ module('Integration | Validations | Model Relationships', function (hooks) {
     assert.deepEqual(model, user, 'expected model to be the correct model');
     assert.deepEqual(
       validations.content.map((item) => item.attribute).sort(),
-      ['friend'].sort()
+      ['friend'].sort(),
     );
 
     let friend = validations.content.find(
-      (item) => item.attribute === 'friend'
+      (item) => item.attribute === 'friend',
     );
 
     assert.false(friend.isValid);
@@ -105,11 +105,11 @@ module('Integration | Validations | Model Relationships', function (hooks) {
     assert.deepEqual(model, user, 'expected model to be the correct model');
     assert.deepEqual(
       validations.content.map((item) => item.attribute).sort(),
-      ['friends'].sort()
+      ['friends'].sort(),
     );
 
     let friends = validations.content.find(
-      (item) => item.attribute === 'friends'
+      (item) => item.attribute === 'friends',
     );
 
     assert.false(friends.isValid);

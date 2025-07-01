@@ -26,7 +26,7 @@ module('Unit | Validator | length', function (hooks) {
     message = validator.validate('test', builtOptions.toObject());
     assert.deepEqual(
       message,
-      'This field is too short (minimum is 5 characters)'
+      'This field is too short (minimum is 5 characters)',
     );
   });
 
@@ -61,7 +61,7 @@ module('Unit | Validator | length', function (hooks) {
     message = validator.validate('testing', builtOptions.toObject());
     assert.deepEqual(
       message,
-      'This field is the wrong length (should be 4 characters)'
+      'This field is the wrong length (should be 4 characters)',
     );
 
     message = validator.validate('test', builtOptions.toObject());
@@ -80,7 +80,7 @@ module('Unit | Validator | length', function (hooks) {
     message = validator.validate('test', builtOptions.toObject());
     assert.deepEqual(
       message,
-      'This field is too short (minimum is 5 characters)'
+      'This field is too short (minimum is 5 characters)',
     );
 
     message = validator.validate('testing', builtOptions.toObject());
@@ -99,7 +99,7 @@ module('Unit | Validator | length', function (hooks) {
     message = validator.validate('testing', builtOptions.toObject());
     assert.deepEqual(
       message,
-      'This field is too long (maximum is 5 characters)'
+      'This field is too long (maximum is 5 characters)',
     );
 
     message = validator.validate('test', builtOptions.toObject());
@@ -118,7 +118,7 @@ module('Unit | Validator | length', function (hooks) {
     message = validator.validate([], builtOptions.toObject());
     assert.deepEqual(
       message,
-      'This field is too short (minimum is 1 characters)'
+      'This field is too short (minimum is 1 characters)',
     );
 
     message = validator.validate([1], builtOptions.toObject());

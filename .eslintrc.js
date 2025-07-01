@@ -4,10 +4,13 @@ module.exports = {
   root: true,
   parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
     sourceType: 'module',
-    ecmaFeatures: {
-      legacyDecorators: true,
+    requireConfigFile: false,
+    babelOptions: {
+      plugins: [
+        ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
+      ],
     },
   },
   plugins: ['ember'],
@@ -19,13 +22,19 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    'ember/no-classic-classes': 'off',
+    'ember/no-new-mixins': 'off',
+    'ember/no-runloop': 'off',
+    'ember/use-ember-data-rfc-395-imports': 'off',
+  },
   overrides: [
     // node files
     {
       files: [
         './.eslintrc.js',
         './.prettierrc.js',
+        './.stylelintrc.js',
         './.template-lintrc.js',
         './ember-cli-build.js',
         './index.js',
@@ -47,6 +56,10 @@ module.exports = {
       // test files
       files: ['tests/**/*-test.{js,ts}'],
       extends: ['plugin:qunit/recommended'],
+      rules: {
+        'qunit/no-conditional-assertions': 'off',
+        'qunit/require-expect': 'off',
+      },
     },
   ],
 };
