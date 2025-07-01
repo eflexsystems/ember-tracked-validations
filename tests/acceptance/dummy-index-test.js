@@ -61,25 +61,19 @@ module('Acceptance | Dummy | index', function (hooks) {
     assert.dom('.form .registered h2.success').hasText('Success');
   });
 
-  test.only('Invalid to valid email', async function (assert) {
+  test('Invalid to valid email', async function (assert) {
     assert.expect(4);
     await visit('/');
 
     const input = find('[data-test-email] input');
 
-    console.log('input', input);
-
     assert.ok(input);
     await fillIn(input, 'invalid-email');
-    console.log('after fillIn');
 
     assert.dom('[data-test-email]').hasClass('has-error');
-    console.log('after data-test-email has error');
     assert
       .dom('[data-test-email] .input-error')
       .hasText('This field must be a valid email address');
-
-    console.log('after valid email');
 
     await fillIn(input, validInputValues.email);
     assert.dom('[data-test-email]').hasClass('has-success');
