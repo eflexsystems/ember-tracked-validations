@@ -1,4 +1,4 @@
-import { click, fillIn, find, visit } from '@ember/test-helpers';
+import { click, fillIn, find, visit, isSettled } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 import { dasherize } from '@ember/string';
@@ -64,6 +64,7 @@ module('Acceptance | Dummy | index', function (hooks) {
   test('Invalid to valid email', async function (assert) {
     assert.expect(4);
     await visit('/');
+    await isSettled();
 
     const input = find('.validated-input[data-test-email] input');
 
